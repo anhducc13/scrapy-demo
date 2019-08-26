@@ -1,0 +1,40 @@
+[
+  {
+    "id": "1fc725f6cf003553bc62845c292f55da",
+    "name": "Điện tử",
+    "url": "https://dienmaycholon.vn/dien-tu",
+    "children": [
+      {
+        "id": "1b0adcf9ee3c313aacbe81659319f3c8",
+        "name": "Tivi LED/OLED/QLED",
+        "url": "https://dienmaycholon.vn/tivi-led",
+        "children": []
+      },
+      {
+        "id": "eef2e6688b3535d6b4df1e62390ba255",
+        "name": "Dàn máy",
+        "url": "https://dienmaycholon.vn/dan-may",
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "6301b0e467823e2fa62dbfc7c18089af",
+    "name": "Điện lạnh",
+    "url": "https://dienmaycholon.vn/dien-lanh",
+    "children": [
+      {
+        "id": "9d30b34119ac3346ada971a89a134ae2",
+        "name": "Máy lạnh",
+        "url": "https://dienmaycholon.vn/may-lanh",
+        "children": []
+      },
+      {
+        "id": "e0c8fe33fe5f32d18022f6a185140ce8",
+        "name": "Máy giặt",
+        "url": "https://dienmaycholon.vn/may-giat",
+        "children": []
+      }
+    ]
+  }
+]
