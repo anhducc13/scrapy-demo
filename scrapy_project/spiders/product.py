@@ -2,6 +2,7 @@ import re
 import json
 import scrapy
 from ..utils import gen_uuid
+from ..items import ProductItem
 
 
 class ProductsSpider(scrapy.Spider):
@@ -9,10 +10,10 @@ class ProductsSpider(scrapy.Spider):
 
     def __init__(self, *args, **kwargs):
         super(ProductsSpider, self).__init__(*args, **kwargs)
-        self.site_url = kwargs['site_url']
-        self.site_name = kwargs['site_name']
-        self.file_category = kwargs['file_category']
-        self.config_crawler = kwargs['config_crawler']
+        self.site_url = kwargs.get('site_url', '')
+        self.site_name = kwargs.get('site_name', '')
+        self.file_category = kwargs.get('file_category', '')
+        self.config_crawler = kwargs.get('config_crawler', dict())
 
     def start_requests(self):
         with open(self.file_category) as cats:
@@ -67,12 +68,12 @@ class ProductsSpider(scrapy.Spider):
         else:
             original_price = None
         image = f'{self.site_url}{response.css(fields["image"]).get()}'
-        yield {
-            'id': p_id,
-            'cat_id': cat_id,
-            'url': response.url,
-            'name': name,
-            'price': price,
-            'original_price': original_price,
-            'image': image
-        }
+        yield ProductItem(
+            id=p_id,
+            cat_id=cat_id,
+            url=response.url,
+            name=name,
+            price=price,
+            original_price=original_price,
+            image=image
+        )
